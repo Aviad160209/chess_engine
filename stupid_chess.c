@@ -22,7 +22,7 @@ int main()
             {
                 chessBord[row][col] = 'r';
             }
-            else if ((row == 0 && col == 1) || (row == 0 && col == 6))
+            else if ((row == 0 && col == 1) || (row == 3 && col == 6))
             {
                 chessBord[row][col] = 'n';
             }
@@ -234,7 +234,13 @@ int main()
                 chessBord[targetRow][targetCol] = 'n';
                 amountOfMoves++;
             }
-            /**/
+            else if (chessBord[targetRow-1][targetCol+2] == 'n')
+            {
+                chessBord[targetRow-11][targetCol+2] = '.';
+                chessBord[targetRow][targetCol] = 'n';
+                amountOfMoves++;
+            }
+            
             
         }
         // printing of the board
